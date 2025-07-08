@@ -24,8 +24,12 @@ final class ChatMessage {
     }
 }
 
-enum Role: String, Codable, CaseIterable {
-    case user
-    case assistant
-    case system
+extension ChatMessage {
+    static var sampleUser: ChatMessage {
+        ChatMessage(role: .user, content: "What is the capital of France?")
+    }
+    
+    static var sampleAssistant: ChatMessage {
+        ChatMessage(role: .assistant, content: "The capital of France is Paris.")
+    }
 }
